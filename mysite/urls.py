@@ -4,8 +4,11 @@ from myweb import views
 
 urlpatterns = [
     path('', views.index),
+    path('united', views.united),
+    path('login', views.login),
+    path('signup', views.signup),
     #path('polls/', include('polls.urls')),
     path('myweb/', include('myweb.urls')),
-    path('united', views.united),
     path('admin/', admin.site.urls),
+ #   path('accounts/', include('django.contrib.auth.urls'))
 ]

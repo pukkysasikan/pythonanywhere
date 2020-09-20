@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = [u'localhost',u'127.0.0.1',u'tone.pythonanywhere.com']
 
+STATICFILES_DIRS = [
+    "/pythonanywhere/static/css",
+]
+
+
+if DEBUG:
+    EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
 
 # Application definition
 
@@ -104,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-EN'
 
 TIME_ZONE = 'UTC'
 

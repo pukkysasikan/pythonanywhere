@@ -8,6 +8,14 @@ def index(req):
 def united(req):
 	return render(req, 'myweb/united.html')
 
+def signup(req):
+	return render(req, 'myweb/signup.html')
+
+def login(req):
+	return render(req, 'myweb/login.html')
+
+
+
 def detail(request, question_id):
     return render(request, 'myweb/detail.html')
 
