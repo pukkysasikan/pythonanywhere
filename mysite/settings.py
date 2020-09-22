@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [u'localhost',u'127.0.0.1',u'tone.pythonanywhere.com']
 
 STATICFILES_DIRS = [
-    "/pythonanywhere/static/css",
+    os.path.join(BASE_DIR, "static"),
 ]
 
 

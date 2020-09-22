@@ -4,7 +4,7 @@ from myweb import views
 
 urlpatterns = [
     path('', views.index),
-    path('united', views.united),
+    path('united/', views.united),
     path('login', views.login),
     path('signup', views.signup),
     #path('polls/', include('polls.urls')),
