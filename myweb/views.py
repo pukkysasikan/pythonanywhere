@@ -1,20 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
-# Create your views here.
-def index(req):
-	return render(req, 'myweb/index.html')
-
-def united(req):
-	return render(req, 'myweb/united.html')
-
-def signup(req):
-	return render(req, 'myweb/signup.html')
-
-def login(req):
-	return render(req, 'myweb/login.html')
+from django.contrib.auth import logout as logout_user
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 
+def index(request):
+    return render(request,'myweb/index.html')
+
+def sign_up(request):
+    context = {}
+    form = UserCreationForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return redirect('index')
+    context['form']=form
+    return render(request,'myweb/sign_up.html',context)
+
+def logout(req):
+    logout_user(req)
+    return redirect('index')
 
 def detail(request, question_id):
     return render(request, 'myweb/detail.html')
