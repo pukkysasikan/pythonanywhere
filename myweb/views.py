@@ -9,6 +9,9 @@ from django.contrib.auth import login
 def index(request):
     return render(request,'myweb/index.html')
 
+def season(request):
+    return render(request,'myweb/season.html')
+
 def sign_up(request):
     context = {}
     form = UserCreationForm(request.POST or None)
@@ -16,7 +19,7 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return redirect('index')
+            return redirect('season')
     context['form']=form
     return render(request,'myweb/sign_up.html',context)
 
