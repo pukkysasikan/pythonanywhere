@@ -27,12 +27,12 @@ def logout(req):
     logout_user(req)
     return redirect('index')
 
-def detail(request, question_id):
-    return render(request, 'myweb/detail.html')
+#def detail(request, question_id):
+   # return render(request, 'myweb/detail.html')
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+#def results(request, question_id):
+    #response = "You're looking at the results of question %s."
+    #return HttpResponse(response % question_id)
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+#def vote(request, question_id):
+    #return HttpResponse("You're voting on question %s." % question_id)

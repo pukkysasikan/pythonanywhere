@@ -45,10 +45,11 @@
   <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
-        <h1 class="font-weight-light">Welcome to Vegetable Four Season</h1>
+        <h1 class="font-weight-light">Login</h1>
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}
+    {% if form.errors %}<p> Try again </p>{% endif %}
     <input type="submit" value="Login">
 </form>
       </div>
