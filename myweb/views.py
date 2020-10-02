@@ -9,8 +9,7 @@ from django.contrib.auth import login
 def index(request):
     return render(request,'myweb/index.html')
 
-def season(request):
-    return render(request,'myweb/season.html')
+
 
 def sign_up(request):
     context = {}
@@ -19,13 +18,13 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return redirect('season')
+            return redirect('index')
     context['form']=form
     return render(request,'myweb/sign_up.html',context)
 
 def logout(req):
     logout_user(req)
-    return redirect('index')
+    return redirect('login')
 
 #def detail(request, question_id):
    # return render(request, 'myweb/detail.html')

@@ -76,7 +76,8 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'season'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL ='login'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
