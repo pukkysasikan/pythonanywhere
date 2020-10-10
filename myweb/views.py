@@ -1,30 +1,47 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render , redirect
 from django.http import HttpResponse
-from django.contrib.auth import logout as logout_user
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from .models import Question, Choice
+from django.contrib import messages
 
 
 def index(request):
     return render(request,'myweb/index.html')
 
+def fruit(request):
+    return render(request,'myweb/fruit.html')
+
+def foodlowkcal(request):
+    return render(request,'myweb/foodlowkcal.html')
+
+def foodlowkcalat(request):
+    return render(request,'myweb/foodlowkcalat.html')
 
 
-def sign_up(request):
-    context = {}
-    form = UserCreationForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            user = form.save()
-            login(request,user)
-            return redirect('index')
-    context['form']=form
-    return render(request,'myweb/sign_up.html',context)
+def login_user(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
 
-def logout(req):
-    logout_user(req)
-    return redirect('login')
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                messages.info(request, 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
+
+        context = {}
+        return render(request, '/', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')
 
 #def detail(request, question_id):
    # return render(request, 'myweb/detail.html')

@@ -1,11 +1,11 @@
-from django.urls import path,include
-from django.contrib.auth import views as aunt_views
+from django.urls import path
 from . import views
-from . import *
 
-urlpatterns = [ 
+urlpatterns = [
    path('index', views.index, name='index'),
-   path('', aunt_views.LoginView.as_view(template_name='myweb/login.html'), name='login'),
-   path('signup', views.sign_up, name='signup'), 
-   path('logout',views.logout, name='logout'),
+   path('fruit', views.fruit, name='fruit'),
+   path('foodlowkcal', views.foodlowkcal, name='foodlowkcal'),
+   path('foodlowkcalat', views.foodlowkcalat, name='foodlowkcalat'),
+   path('login', views.login_user, name='login'),
+   path('logout', views.logout_user, name='logout'),
 ]
