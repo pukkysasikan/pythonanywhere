@@ -19,6 +19,12 @@ def foodlowkcal(request):
 def foodlowkcalat(request):
     return render(request,'myweb/foodlowkcalat.html')
 
+def howtoeat(request):
+    return render(request,'myweb/howtoeat.html')
+
+def howtodrink(request):
+    return render(request,'myweb/howtodrink.html')
+
 
 def login_user(request):
     if request.user.is_authenticated:

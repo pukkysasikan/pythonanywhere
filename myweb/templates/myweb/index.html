@@ -40,7 +40,7 @@ body {
         {{ user }}
         {% else %}
         <div class="dropdown" style="float:right;" >
-            <a href="/login" class="dropbtn">Login</a>
+            <a href="#" class="dropbtn">Login</a>
             <div class="dropdown-content" style="width: 30%;">
                 <form action="/login" method="post" >
                     {% csrf_token %}
@@ -63,6 +63,7 @@ body {
                       </di>
                     </form>
                 </div>
+
         </div>
       </div>
       {% endif %}
@@ -76,7 +77,7 @@ body {
                  <div class="fakeimg" ><img src="static/drink.webp"style="height:70%; width: 60%;" alt=""></a></div>
                  <p>หนึ่งในวิธี "ลดน้ำหนัก" ที่สาวๆ สายสุขภาพให้การยอมรับและบอกต่อกันมากก็คือ การดื่มน้ำเปล่าเยอะๆ แต่รู้หรือไม่? ว่าการดื่มน้ำเพื่อให้ผอม ก็ต้องมีขั้นตอนการดื่มให้ถูกต้องด้วย</p>
                  <p><b>ไลฟ์สไตล์ไทยรัฐ :</b> ได้รวบรวมวิธีและขั้นตอนการดื่มน้ำให้เพียงพอในแต่ละวัน เพื่อช่วยให้คุณลดน้ำหนักได้ดีอีกทางหนึ่ง และยังช่วยเรื่องผิวพรรณของสาวๆ ให้เปล่งปลั่งสดใสได้ด้วย</p>
-                 <a href="HowToDrink.html">more</a>
+                 <a href="/howtodrink">more</a>
             </div>
             <div class="card2">
                 <h2><b>10 เทคนิคกินลดหุ่น กินอิ่ม ไม่ต้องอด แค่กินให้เป็นก็ผอมได้!</b></h2>
@@ -84,7 +85,7 @@ body {
                 <div class="fakeimg" ><img src="https://cms.dmpcdn.com/women/2018/06/05/b9284b1e-578c-4b7b-96b2-94e82c64c83a.jpg" style="height:70%; width: 60%;"alt=""></div>
                 <p>อยากผอม อยากหุ่นดี การกินช่วยได้นะจ๊ะ! อ๊ะๆ ใครกำลังสงสัยว่าการกินช่วยได้ยังไง ตามเรามาดู 10 เทคนิคกินลดหุ่น นี่เลยค่าา บอกเลยว่า แค่ปรับการกินให้ให้สมดุลและถูกต้อง ก็ช่วยให้ผอมได้แล้วนะ!</p>
                 <p>สำหรับเทคนิคดีๆ ที่เรานำมาฝากสาวๆ ในวันนี้ เป็นวิธีง๊ายง่ายค่ะ แค่ปรับการกินในชีวิตประจำวันของเราเพียงเล็กน้อยเท่านั้น ไม่ต้องอดอาหารให้เหนื่อยให้โทรม ก็มีหุ่นสวยได้เหมือนกัน! แต่กินตามนี้แล้ว อย่าลืมออกกำลังกายกันด้วยนะคะ จะได้มีหุ่นเฟิร์มสวย ไม่ย้วย อวดหุ่นใหม่ได้มั่นใจยิ่งกว่าเดิม</p>
-                <a href="HowToEat.html">more</a>
+                <a href="/howtoeat">more</a>
             </div>
 
         </div>
@@ -96,7 +97,7 @@ body {
                 <h2>เนื้อหายอดฮิต</h2>
                 <div class="fakeimg">
                     <img src="https://women.mthai.com/app/uploads/2019/08/Cover-Pure-15-2.jpg" style="height:100%; width: 100%;" alt="">
-                    <a href="Fruit.html"><b>10 ผลไม้ลดความอ้วน แคลฯ น้อย กินได้เพลินๆ พุงไม่มาเยือนแน่นอน</b></a>
+                    <a href="/fruit.html"><b>10 ผลไม้ลดความอ้วน แคลฯ น้อย กินได้เพลินๆ พุงไม่มาเยือนแน่นอน</b></a>
 
                 </div>
 
@@ -104,9 +105,9 @@ body {
 
             <div class="card2">
                 <h3>Popular Post</h3>
-                <div class="fakeimg"><p>Image</p></div>
-                <div class="fakeimg"><p>Image</p></div>
-                <div class="fakeimg"><p>Image</p></div>
+                <div class="fakeimg"><img src="https://cache.gmo2.sistacafe.com/images/uploads/content_image/image/189020/1471888531-88b9dfb47993336d672242f5528d76da.jpg" style="height:100%; width: 100%;" alt=""><p>แอปเปิล 150Kcal/100กรัม</p></div>
+                <div class="fakeimg"><img src="https://cache.gmo2.sistacafe.com/images/uploads/content_image/image/189024/1471888746-original-1415267622466.jpg" style="height:100%; width: 100%;" alt=""><p>แครนเบอรี่ 46Kcal/100กรัม</p/></div>
+                <div class="fakeimg"><img src="https://cache.gmo2.sistacafe.com/images/uploads/content_image/image/189026/1471888840-taiguoxiaoboluo2222222222.jpg" style="height:100%; width: 100%;" alt=""><p>สับปะรด 50Kcal/100กรัม</p/></div>
             </div>
             <div class="card2">
                 <h3>Follow Me</h3>
@@ -115,7 +116,10 @@ body {
         </div>
     </div>
     <div class="footer">
-        <h2>Footer</h2>
+        </b><div class="fakeimg2"><img src="https://cdn.pixabay.com/photo/2016/01/26/17/15/gmail-1162901_960_720.png" style="height:2%; width: 2%;" alt="">  sasikan.in.62@ubu.ac.th</div>
+        <div>ชื่อ :นางสาว ศศิกานต์ อินวิถี </div>
+        <div>62114440338 </>
+            </div>
     </div>
 
 
