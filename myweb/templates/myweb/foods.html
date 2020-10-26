@@ -1,0 +1,16 @@
+{% extends 'myweb/base.html' %}
+{% block title %}FOOD{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="leftcolumn">
+        {% for i in food %}
+        <div class="card2">
+            <h2>{{ i.name }}</h2>
+            <div class="fakeimg"><img src="/media/{{ i.img }}" style="height:70%; width: 60%;" alt=""></a></div>
+            <P>ประเภทอาหาร:&nbsp;{{ i.foodType }}</P>
+            <P>แคลลอรี่:&nbsp;{{ i.cal }}</P>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'myweb/base.html' %}
+{% block title %}Hun Mai Meh{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card2">
+            <h2>สมัครสมาชิก</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="สมัคร">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

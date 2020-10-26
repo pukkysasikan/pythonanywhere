@@ -1,0 +1,16 @@
+{% extends 'myweb/base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card2">
+            <h2>{{ article.title }}</h2>
+            <P>ผู้เขียน:&nbsp;{{ article.author }}<br></P>
+            <div class="fakeimg"><img src="/media/{{ article.img }}" style="height:70%; width: 60%;" alt=""></a></div>
+            <P>{{ article.intro }}<br></P>
+            <hr>
+            <p>{{ article.detail }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

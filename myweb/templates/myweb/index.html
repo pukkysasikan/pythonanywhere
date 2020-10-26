@@ -1,0 +1,16 @@
+{% extends 'myweb/base.html' %}
+{% block title %}Hun Mai Meh{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="leftcolumn">
+        {% for i in articles %}
+        <div class="card2">
+            <h2>{{ i.title }}</h2>
+            <div class="fakeimg"><img src="/media/{{ i.img }}" style="height:70%; width: 60%;" alt=""></a></div>
+            <P>{{ i.intro }}</P>
+            <a href="/article/{{ i.id }}">more</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

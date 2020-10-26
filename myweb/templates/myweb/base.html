@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
+    <link rel="stylesheet" href="/static/style2.css">
+    <link rel="icon" type="image/png" href="https://www.flaticon.com/svg/static/icons/svg/3593/3593654.svg">
+
+    <style>
+        body {
+            background-image: url("/static/bg.jpg");
+            background-size: 100%;
+            font-family: 'mali', serif;
+            font-size: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>Hun Mai Meh</h1>
+        <p>อาหารที่คัดสรรมา เผื่อคุมน้ำหนักโดยเฉพาะ.</p>
+    </div>
+
+    <div class="topnav">
+        <a href="/">HOME</a>
+        <a href="/food">FOOD</a>
+        <a href="/signup">สมัครสมาชิก</a>
+        <a href="/admin">ADMIN</a>
+
+        {% if user.is_authenticated %}
+        <div class="dropdown" style="float:right;">
+            <a>Hi {{ user }}</a>
+            <a href="/Logout" class="dropbtn">Logout</a>
+        </div>
+
+        {% else %}
+        <div class="dropdown" style="float:right;">
+            <a href="#" class="dropbtn">Login</a>
+            <div class="dropdown-content" style="width: 30%;">
+                <form action="/Login" method="POST">
+                    {% csrf_token %}
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+
+                        <button type="submit">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot Password?</a></span>
+                        </di>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="footer">
+        </b>
+        <div class="fakeimg2"><img src="https://cdn.pixabay.com/photo/2016/01/26/17/15/gmail-1162901_960_720.png"
+                style="height:2%; width: 2%;" alt=""> sasikan.in.62@ubu.ac.th</div>
+        <div>ชื่อ :นางสาว ศศิกานต์ อินวิถี </div>
+        <div>62114440338</div>
+    </div>
+
+</body>
+
+</html>
