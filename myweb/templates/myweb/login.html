@@ -1,0 +1,22 @@
+{% extends 'myweb/base.html' %}
+{% block title %}Hun Mai Meh{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card2">
+            <h2>สมัครสมาชิก</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                </div>
+                <input type="submit" value="LOGIN">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -23,7 +23,7 @@ def article(request, id):
 
 def login_user(request):
     if request.user.is_authenticated:
-        return redirect('/')
+        return redirect('index')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -36,9 +36,7 @@ def login_user(request):
                 return redirect('index')
             else:
                 messages.info(request, 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
-
-        context = {}
-        return render(request, '/', context)
+        return render(request, 'myweb/login.html')
 
 
 def signup(request):
